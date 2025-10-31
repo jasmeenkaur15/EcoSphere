@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoBot Assistant - EcoSphere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#17cf17",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+            "surface-light": "#ffffff",
+            "surface-dark": "#1a2e1a",
+            "text-primary-light": "#0e1b0e",
+            "text-primary-dark": "#e7f3e7",
+            "text-secondary-light": "#4e974e",
+            "text-secondary-dark": "#a2d1a2",
+            "border-light": "#e7f3e7",
+            "border-dark": "#2c4c2c",
+            "user-bubble-light": "#e0f2fe",
+            "user-bubble-dark": "#0c4a6e",
+            "user-bubble-text-light": "#075985",
+            "user-bubble-text-dark": "#e0f2fe",
+            "ai-bubble-light": "#e7f3e7",
+            "ai-bubble-dark": "#1e3a1e",
+          },
+          fontFamily: {
+            "display": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+<div class="flex h-screen w-full">
+<!-- Left Sidebar -->
+<aside class="w-80 flex-shrink-0 flex flex-col bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark">
+<div class="flex h-full min-h-0 flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQlhqN1kbX19XtT6zhBR550ggnVqBA_x3ybS3vnIXMDXbEAVTRq9CGWXr-QA75_jpefqqUUan3GoDqoq7ep2EuAgqO09Ggsw34zn4hkxen8DD4tabHwPXRanCo4E7db_jLfhHwsmg73lY1KY7OgPCNaLG3-gTVJLMepwmTw_ztJbIxGOPklunxzwp6JJK6cP6ruU82wQkBelj6oL4ingT8gTwBnF2OELSjF_66Gs5vwtnDSenT7hfPqWDYj5OhXj-SlT7snouZkJo");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Olivia Green</h1>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">olivia.green@email.com</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-xl">
+                more_horiz
+              </span>
+</button>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-xl">add</span>
+<span class="truncate">New Chat</span>
+</button>
+<div class="flex flex-col gap-1">
+<p class="px-3 text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark uppercase tracking-wider">Recent</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-ai-bubble-light dark:bg-ai-bubble-dark cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg text-text-primary-light dark:text-text-primary-dark">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate text-text-primary-light dark:text-text-primary-dark">Composting &amp; Recycling Tips</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg text-text-secondary-light dark:text-text-secondary-dark">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate text-text-secondary-light dark:text-text-secondary-dark">Reducing Carbon Footprint</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-lg text-text-secondary-light dark:text-text-secondary-dark">chat_bubble</span>
+<p class="text-sm font-medium leading-normal truncate text-text-secondary-light dark:text-text-secondary-dark">Local Green Events</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl text-text-secondary-light dark:text-text-secondary-dark">settings</span>
+<p class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl text-text-secondary-light dark:text-text-secondary-dark">help_center</span>
+<p class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Help Center</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 cursor-pointer" href="#">
+<span class="material-symbols-outlined text-xl text-text-secondary-light dark:text-text-secondary-dark">logout</span>
+<p class="text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Logout</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Chat Window -->
+<main class="flex-1 flex flex-col h-screen">
+<!-- Header -->
+<header class="flex items-center justify-between gap-2 px-6 py-3 border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex-shrink-0">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12" data-alt="EcoBot AI assistant avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKa5RVR6XqC3hFP3Im6KOIpKUp7i5vC1c7WKAt5ifNRCW69jNUDxyj7O3u4RSX1SRcl34C05kGXpDBsQ1vCYKVb4Hezf2_fd6ZW4oVJVDJEcdg5ix7rsbD_kN0kgAe168tFMQTU8v3aYM8mlPp7wzeS0kZwJ5GmAdfJg1j0vUXnKpDXDh9bLSkA6T61I97xBIhqJI66Kt0QbylQX7gk5w-0x6Dc1_3HUAeqjlfwjCyxxbukZwzAIHAwwz68Y8krciIlBZhM5GZNqU");'></div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></div>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">EcoBot Assistant</p>
+<p class="text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Online</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-text-secondary-light dark:text-text-secondary-dark rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">delete</span>
+</button>
+<button class="p-2 text-text-secondary-light dark:text-text-secondary-dark rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">download</span>
+</button>
+<button class="p-2 text-text-secondary-light dark:text-text-secondary-dark rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">info</span>
+</button>
+</div>
+</header>
+<!-- Conversation Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- AI Welcome Message -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0" data-alt="EcoBot AI assistant avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAD9rdLHhZQlKDLQD531LLi6QGbdZdDfYBeTPVDdU9AkiOCEfc0LDK44k5etDrrPEBwaKGfMQ0dZSgqwS_fbIBXLFqBnvtsmxUC_JHcft7rLLSo-NYqIfbNd8SfYTzxobl6zvBf-lBrPRX7x3XErbTOA3xmfeYOWLBvCwPMLve0i80EyjImwU-M3MANGJ441gkQ01yQAzgPovPGZK48-sriA3E1eqtz9MfBSAuTpNBYacdxqqJ9JBTxAeNC-1gFcbwfAzk2yoETQ6s");'></div>
+<div class="flex flex-1 flex-col gap-2 items-start">
+<p class="text-base font-normal leading-relaxed flex max-w-xl rounded-lg rounded-bl-none px-4 py-3 bg-ai-bubble-light dark:bg-ai-bubble-dark text-text-primary-light dark:text-text-primary-dark">
+              Hello! I'm EcoBot, your guide to a greener planet. How can I help you today? You can ask me about recycling, how to reduce your carbon footprint, or report an environmental issue.
+            </p>
+</div>
+</div>
+<!-- Suggestion Chips -->
+<div class="flex justify-center">
+<div class="flex gap-3 flex-wrap pl-12 max-w-xl">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-ai-bubble-light dark:bg-ai-bubble-dark px-4 hover:bg-primary/20 dark:hover:bg-primary/30">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Learn about composting</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-ai-bubble-light dark:bg-ai-bubble-dark px-4 hover:bg-primary/20 dark:hover:bg-primary/30">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Report an issue</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-ai-bubble-light dark:bg-ai-bubble-dark px-4 hover:bg-primary/20 dark:hover:bg-primary/30">
+<p class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Find local green events</p>
+</button>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-end gap-3 justify-end">
+<div class="flex flex-1 flex-col gap-2 items-end">
+<p class="text-base font-normal leading-relaxed flex max-w-xl rounded-lg rounded-br-none px-4 py-3 bg-user-bubble-light dark:bg-user-bubble-dark text-user-bubble-text-light dark:text-user-bubble-text-dark">
+              Tell me more about composting at home.
+            </p>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8BPJS3IQchBEAmpS_aITgYydc9Ra20ocwF2EVobBYdBMFOj4BFBwFmck069QPS2sqb1LjNS-9PMr9IUBYXFawKMNGgbclpNQ5-oXSnYw1aQPufAZWe_T7UQYO5Gpok5OsiwGoVIl4BL_e2GFSeFIbQZaWBCARalWCFK_hyJy27fKRpaBNcNXeJB5oerYgERGa7oy47Xp8ZMi9cMPDjWseNWi8boLN5xzfuQDIcXPHcrC0jFy1z9KtbQ2dnnwDf_eklSgc9H467iE");'></div>
+</div>
+<!-- AI Loading Indicator -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0" data-alt="EcoBot AI assistant avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIFQf2fRMS5iM_pMpzWOaSGN_FnXxYVxQpF5k6O55m58t-41r2-DQo-OXQc_1AwdG6iNJAlDfhKXGW1lWYvwBF3wmsr6PfoFJ42d8jhI09GcBS9p8IMFKpeCK8Z5A4vVt9cFvD3Nnix6AnJoi32a4wDUqb1AqURq_jWPtOeqAneoDpYC5mq3FTm1nopxYuB3mSz1vLGpoN4KW8BnlCEoi1cu6Dt_P4AHW3sBxlq5dDmpWsCTM9kSvBk8mM3LHRlv3wS7P9JZP7RXc");'></div>
+<div class="flex flex-1 flex-col gap-2 items-start">
+<div class="flex space-x-1.5 max-w-xl rounded-lg rounded-bl-none px-4 py-4 bg-ai-bubble-light dark:bg-ai-bubble-dark">
+<div class="size-2 bg-text-secondary-light dark:text-text-secondary-dark rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+<div class="size-2 bg-text-secondary-light dark:text-text-secondary-dark rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+<div class="size-2 bg-text-secondary-light dark:text-text-secondary-dark rounded-full animate-bounce"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Message Input -->
+<div class="px-6 py-4 bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
+<div class="relative flex items-center">
+<input class="w-full h-12 px-4 pr-12 text-sm rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-transparent text-text-primary-light dark:text-text-primary-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark" placeholder="Ask EcoBot anything..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg text-white bg-primary hover:bg-primary/90">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

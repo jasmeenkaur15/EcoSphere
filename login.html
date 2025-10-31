@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - EcoSphere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#17cf17",
+              "background-light": "#f6f8f6",
+              "background-dark": "#112111",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVSQ7ZEaB45lD33-pf2m5GFlyZAOt6si23ZxTLjVqTvzNtNKDWGQ5A7J3_CRL3qdZCGprLeCYTLYic7RujpzFpCxTdnAeX3bH3f0NADjnDOgLdVew6uuSWDyCkGq71odMfjrukQVqkRUCWg-orfe8wOp_0iQAsleWsaPIk6tcDqBjNDlt1RThvZLghLKCDXMNAvBwZ7FZa_7NuGAJ8qz2HNsmRCn65fLxwMKSnfKnpKaEIr5w1FH7Eqme4ov9i2c4kOyjKJnON0TE"); background-size: cover; background-position: center;'>
+<div class="absolute inset-0 bg-black/50"></div>
+<div class="relative z-10 flex w-full max-w-md flex-col items-center justify-center p-4">
+<div class="w-full rounded-xl bg-background-light/90 p-6 shadow-2xl backdrop-blur-sm dark:bg-background-dark/90 md:p-8">
+<div class="mb-6 flex flex-col items-center text-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl text-primary">eco</span>
+<h1 class="text-3xl font-bold text-slate-800 dark:text-slate-200">EcoSphere</h1>
+</div>
+<h2 class="mt-2 text-xl font-semibold text-slate-700 dark:text-slate-300">Welcome Back</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Your journey to a greener planet continues.</p>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex w-full flex-col">
+<p class="pb-2 text-base font-medium text-slate-800 dark:text-slate-200">Email or Username</p>
+<input class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-white p-4 text-base font-normal leading-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/40 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-primary" placeholder="Enter your email or username" value=""/>
+</label>
+<label class="flex w-full flex-col">
+<p class="pb-2 text-base font-medium text-slate-800 dark:text-slate-200">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg border border-r-0 border-slate-300 bg-white p-4 pr-2 text-base font-normal leading-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/40 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 dark:focus:border-primary" placeholder="Enter your password" type="password" value=""/>
+<div class="flex cursor-pointer items-center justify-center rounded-r-lg border border-l-0 border-slate-300 bg-white px-4 text-slate-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-400">
+<span class="material-symbols-outlined text-2xl">visibility</span>
+</div>
+</div>
+</label>
+</div>
+<div class="mt-2 flex justify-end">
+<a class="px-1 text-sm font-normal leading-normal text-primary underline hover:text-primary/80" href="#">Forgot Password?</a>
+</div>
+<div class="mt-6">
+<button class="flex h-12 w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-[0.015em] text-slate-900 transition-colors hover:bg-primary/90">
+<span class="truncate">Log In</span>
+</button>
+</div>
+<div class="my-6 flex items-center gap-4">
+<hr class="flex-grow border-slate-300 dark:border-slate-600"/>
+<span class="text-sm text-slate-500 dark:text-slate-400">OR</span>
+<hr class="flex-grow border-slate-300 dark:border-slate-600"/>
+</div>
+<div>
+<button class="flex h-12 w-full min-w-[84px] cursor-pointer items-center justify-center gap-3 overflow-hidden rounded-lg border border-slate-300 bg-white px-5 text-base font-medium leading-normal text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700">
+<img alt="Google logo" class="h-5 w-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu4eioPkf2RjwpPhFUelfHW90T9kohCCB5u3tz_YXVjs5NeECxDKOWCqyAYCY81FeLT8H9dAmmZqVyVKJG0TQOJxw5aykazcEyEoi9f1QyXKQO8CuP5dc_O1JnKzck7sIZU3YdxZ8lMZ_2q0MkF1dSOC5DBDAZ3x0_EQSlvsowi4DxguTE_pHPvrF-mRuizERuGoPfegF0y2MCCL-0v7s-7oBySNpjQcp-mWpl17MNwQnTEW0l0Np1e2lxUgOIWUntJswcTHJe2O0"/>
+<span class="truncate">Continue with Google</span>
+</button>
+</div>
+<div class="mt-8 text-center">
+<p class="text-sm text-slate-600 dark:text-slate-400">
+                        New to EcoSphere?
+                        <a class="font-bold text-primary hover:underline" href="signup.html">Sign Up</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

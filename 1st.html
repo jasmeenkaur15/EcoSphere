@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoSphere - Your Community, Your Planet, Your Action.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4CAF50", // Vibrant Leaf Green for primary CTAs and accents
+                        "primary-dark": "#004d40", // Deep Forest Green for headlines and key elements
+                        "background-light": "#F8F9FA", // Off-white
+                        "background-dark": "#111827", // Dark gray-blue for dark mode
+                        "text-light-primary": "#004d40", // Deep Forest Green on light bg
+                        "text-light-secondary": "#5f6368", // Neutral gray on light bg
+                        "text-dark-primary": "#F8F9FA", // Off-white on dark bg
+                        "text-dark-secondary": "#9CA3AF", // Light gray on dark bg
+                        "accent-blue": "#2196F3", // Sky Blue for AI feature
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/50">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4 text-text-light-primary dark:text-text-dark-primary">
+<span class="material-symbols-outlined text-primary text-3xl">public</span>
+<h2 class="text-xl font-bold">EcoSphere</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary-dark dark:hover:text-primary transition-colors" href="#"><a href="2nd">Report an Issue</a></a>
+<a class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary-dark dark:hover:text-primary transition-colors" href="#">Blog</a>
+<a class="text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary-dark dark:hover:text-primary transition-colors" href="#">About Us</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary/20 dark:bg-primary/30 text-primary-dark dark:text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+<span class="truncate"><a href="login.html">Log In</a></span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary-dark text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+<span class="truncate"><a href="signup.html">Sign Up</a></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- HeroSection -->
+<section class="relative @container">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center text-center p-8 my-10" data-alt="A diverse group of volunteers smiling and planting trees in a sunny field" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC0t2Q6QCYsz4kj3dYMXvM7M1hwq0RvUjZEUqbZVNMoS_zRFyT6Hh408f_1QCxvsHmatEj0IThVW3W9pKdhXMwVByjtdENxK8W0QWNh2PP_LmDjqjlJR_DYeAN_c5_VFvAqKf2ZiE7Yaj8wQcf_R8CqPx5kZ21B3bjfpGk9M2s2RGu3t_As6DIOwMlwUt885cUJzfOg39I2t4cVL5J-xAoJ76VfJEUFVS6U7k1Hqkjal0bkFemvQ2pgi7rSrYyrF5okn0SpSJqWsb0");'>
+<div class="flex flex-col gap-4 max-w-3xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-tighter @[480px]:text-6xl">
+                                Your Community, Your Planet, Your Action.
+                            </h1>
+<h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg">
+                                Connecting communities to report, resolve, and reverse local environmental issues.
+                            </h2>
+</div>
+<div class="flex-wrap gap-4 flex justify-center">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-primary-dark text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+<span class="truncate"><a href="2nd.html">Report an Issue</a></span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-gray-100 dark:bg-gray-800 text-primary-dark dark:text-white text-base font-bold leading-normal tracking-wide hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="truncate"><a href="4th.html">Eco-AI</a></span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FeatureSection -->
+<section class="py-16 sm:py-20">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col gap-12 @container">
+<div class="flex flex-col gap-3 text-center items-center">
+<h2 class="text-text-light-primary dark:text-text-dark-primary text-3xl font-bold leading-tight tracking-tight @[480px]:text-4xl max-w-2xl">
+                                How EcoSphere Empowers You
+                            </h2>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base font-normal leading-relaxed max-w-3xl">
+                                Our platform provides the tools you need to make a tangible difference in your local environment. From reporting issues to learning about sustainability, we're with you every step of the way.
+                            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/50 p-6 flex-col items-start text-left">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight"><a href="2nd.html">See an Issue? Report It.</a></h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Quickly flag local environmental problems like illegal dumping, pollution, or deforestation.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/50 p-6 flex-col items-start text-left">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-accent-blue/20 text-accent-blue">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight"><a href="4th.html">Ask Our Eco-AI</a></h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Get instant, reliable answers to your sustainability questions from our AI-powered chatbot.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700/50 bg-white dark:bg-gray-800/50 p-6 flex-col items-start text-left">
+<div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight"><a href="5th.html">Get Inspired</a></h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">Read stories, tips, and guides on our blog to live a more eco-friendly life.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-16 sm:py-20">
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary text-center mb-12">How It Works</h2>
+<div class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4">
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary text-lg font-bold">1</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-10">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold">Spot &amp; Report</h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base">Use our simple form to report an environmental issue in your area. Add photos and a location to provide clear details.</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-px bg-gray-300 dark:bg-gray-600 h-4"></div>
+<div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary text-lg font-bold">2</div>
+<div class="w-px bg-gray-300 dark:bg-gray-600 grow"></div>
+</div>
+<div class="flex flex-1 flex-col pb-10">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold">Connect &amp; Collaborate</h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base">Your report becomes visible to the community, local authorities, and partner NGOs, who can then verify and take action.</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-px bg-gray-300 dark:bg-gray-600 h-4"></div>
+<div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary/20 text-primary text-lg font-bold">3</div>
+</div>
+<div class="flex flex-1 flex-col pb-10">
+<h3 class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold">Drive Change</h3>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-base">Track the progress of your report, see the impact of collective action, and help create a cleaner, healthier environment for everyone.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Preview Section -->
+<section class="py-16 sm:py-20 bg-white dark:bg-gray-800/50">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col items-center text-center gap-3 mb-12">
+<h2 class="text-3xl font-bold text-text-light-primary dark:text-text-dark-primary">From the Blog</h2>
+<p class="text-base text-text-light-secondary dark:text-text-dark-secondary max-w-2xl">Stay informed and inspired with our latest articles, guides, and community success stories.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<article class="flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/50 group">
+<img class="h-48 w-full object-cover" data-alt="Close-up of hands holding a metal reusable straw next to a glass of iced tea." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrmE_zYCEHzAFF5fw1V5iTNqOLFjYcrTor2PGiNmgZ_3WNb1b48XUAh7NtSBB-7BVGa0esSh91J-ZeLIHMdLzo0wA0_Pr3BRHzKGOjDsBzL7pS3bDVhGi1u5h53htXppdjuZatmEIuYNUhKs6icDHANV8iN3VDGjwB2QLicLVk_dlBTUsmDARZT83AwpIfQZqVVFwLki1ngoCRDxHIk7TCoDjoaKJP2o7wGZDYmI4J-C-ZDem1LtSFDGoVJaqHPnTilzwh2aDyFkk"/>
+<div class="flex flex-col flex-grow p-6">
+<h3 class="text-lg font-bold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary transition-colors">5 Simple Swaps for a Greener Kitchen</h3>
+<p class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">Discover easy and affordable changes you can make today to reduce waste and create a more sustainable kitchen.</p>
+<a class="mt-4 text-sm font-bold text-primary hover:underline" href="#">Read More →</a>
+</div>
+</article>
+<article class="flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/50 group">
+<img class="h-48 w-full object-cover" data-alt="A smiling woman in a yellow jacket picking up plastic bottles from a riverbank with a group of volunteers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoJ1gt-E70ofWOfYzF6w5qBY-_53FHp0rlG1ax0MYD396CfrHzvkrKN_FNyjHaQS_AmgUX8WZrii1Tbi0ZC69GJhQULG9Fgiz6zr5E4_7Txp2k3rYdQaogPTzz9M8MREEqYVU-PeeIhB1-bZwBNr1wn5Di6XTs1DHVQzU7ppNhAIqONUQR1Ob-1_w1gFmJXlufo-DOpdU0YxeW7FwnAX3krw9jwKz7HclMLrm-Fnkfp_e7lUl1xgQPj0xDr5tL5_6Uf8EyfmiYMyw"/>
+<div class="flex flex-col flex-grow p-6">
+<h3 class="text-lg font-bold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary transition-colors"><a href="6th.html">Community Spotlight: The River Cleanup Project</a></h3>
+<p class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">Learn how a small group of dedicated citizens made a big impact on their local waterway, one piece of trash at a time.</p>
+<a class="mt-4 text-sm font-bold text-primary hover:underline" href="6th.html">Read More →</a>
+</div>
+</article>
+<article class="flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/50 group">
+<img class="h-48 w-full object-cover" data-alt="A person's hands holding a smartphone displaying a map with green pins, indicating reported environmental issues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApLa3pCGiG61DJFv3EownOBy03jxxt6vt4UVYGzH4kkHzepT4vyL2VK_xK5KWbi5wI-HirRUgXPJ31VcRkwxJxZsGpodIojpz3-8BZa4fFIKHwPiHGkmQJDNO_r--r1kEH0JzxiO4K7r_KMFvM3eNt7RaVaj61h23EaG3oZ88FbIOLdFx7NoOySRF8goAOtDmCieqxBa2brA_65IFMrkrqt1py6E-0f8-cPneIKdwqJ-EGpwqBMY1OTMjTZkTBi-JeIc5FVjZDmVM"/>
+<div class="flex flex-col flex-grow p-6">
+<h3 class="text-lg font-bold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary transition-colors">How Your Reports Turn into Real Action</h3>
+<p class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">An inside look at the journey of an EcoSphere report, from submission to resolution and the teams that make it happen.</p>
+<a class="mt-4 text-sm font-bold text-primary hover:underline" href="#">Read More →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-dark text-gray-300">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">public</span>
+<h2 class="text-lg font-bold text-white">EcoSphere</h2>
+</div>
+<p class="text-sm">Driving community-powered environmental action.</p>
+</div>
+<div>
+<h4 class="font-bold text-white mb-3">Company</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-3">Resources</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-white transition-colors" href="2nd.html">Report an Issue</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Community Guidelines</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-3">Legal</h4>
+<ul class="space-y-2 text-sm">
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-gray-700/50 text-center text-sm">
+<p>© 2024 EcoSphere.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
