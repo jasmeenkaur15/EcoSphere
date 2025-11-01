@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Report an Environmental Concern - EcoSphere</title>
+<title>Your Report Summary - EcoSphere</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -34,9 +34,6 @@
     }
   </script>
 <style>
-    .form-input {
-      --tw-ring-color: transparent;
-    }
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       line-height: 1;
@@ -62,9 +59,6 @@
     .dark .border-slate-200 {
         border-color: #4a5568;
     }
-    .dark .placeholder-slate-400::placeholder {
-        color: #718096;
-    }
   </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark">
@@ -77,8 +71,8 @@
 <h1 class="text-slate-800 dark:text-slate-100 text-xl font-bold">EcoSphere</h1>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">Report Issue</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="1st.html">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="2nd.html">Report Issue</a>
 <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a>
 <a class="text-slate-600 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
 </nav>
@@ -97,51 +91,57 @@
 <div class="container mx-auto px-4 py-12">
 <div class="mx-auto max-w-3xl">
 <div class="text-center mb-10">
-<h2 class="text-slate-800 dark:text-slate-100 text-4xl font-black leading-tight tracking-tight">Report an Environmental Concern</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg mt-2">Help us protect our community. Detail the issue you've observed below.</p>
+<h2 class="text-slate-800 dark:text-slate-100 text-4xl font-black leading-tight tracking-tight">Your Report Summary</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg mt-2">Review your submitted environmental concern. We'll follow up soon!</p>
 </div>
-<div class="bg-background-light dark:bg-slate-800 rounded-xl shadow-lg p-6 sm:p-8 space-y-8 border border-slate-200">
-<div>
-<div class="flex gap-6 justify-between items-center mb-2">
-<p class="text-slate-800 dark:text-slate-200 text-base font-medium">Step 1 of 3: Issue Details</p>
-<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">33% Complete</span>
+<div id="report-display" class="bg-background-light dark:bg-slate-800 rounded-xl shadow-lg p-6 sm:p-8 space-y-6 border border-slate-200">
+<!-- Report content will be inserted here by JavaScript -->
 </div>
-<div class="rounded-full bg-slate-200 dark:bg-slate-700 h-2">
-<div class="h-2 rounded-full bg-primary" style="width: 33%;"></div>
-</div>
-</div>
-<form class="space-y-6">
-<div class="grid grid-cols-1 gap-6">
-<label class="flex flex-col">
-<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Title of the Report</p>
-<input class="form-input w-full rounded-lg border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-primary focus:ring-primary/50 transition-colors" placeholder="e.g., Illegal Waste Dumping at City Park" type="text"/>
-</label>
-<label class="flex flex-col">
-<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Type of Issue</p>
-<select class="form-select w-full rounded-lg border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700 text-slate-800 dark:text-slate-100 focus:border-primary focus:ring-primary/50 transition-colors">
-<option>Select an issue type</option>
-<option value="dumping">Illegal Dumping</option>
-<option value="pollution">Pollution (Air, Water, Soil)</option>
-<option value="deforestation">Deforestation</option>
-<option value="wildlife">Wildlife Endangerment</option>
-<option value="other">Other</option>
-</select>
-</label>
-<label class="flex flex-col">
-<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Detailed Description</p>
-<textarea class="form-textarea w-full rounded-lg border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:border-primary focus:ring-primary/50 transition-colors" placeholder="Provide as much detail as possible. What did you see? When did you see it? Who was involved?" rows="5"></textarea>
-</label>
-</div>
-<div class="flex justify-end pt-4">
-<button class="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors" type="button">
-<span><a href="7th.html">Next</a></span>
-<span class="material-symbols-outlined">arrow_forward</span>
+<div class="flex justify-between pt-6">
+<button onclick="window.location.href='2nd.html'" class="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 text-base font-bold leading-normal tracking-wide hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Edit Report</span>
 </button>
-</div>
-</form>
+<button onclick="window.location.href='1st.html'" class="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-11 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+<span>Back to Dashboard</span>
+<span class="material-symbols-outlined">home</span>
+</button>
 </div>
 </div>
 </div>
 </main>
+<script>
+  // JavaScript to load and display the saved report data
+  const reportData = JSON.parse(localStorage.getItem('ecoSphereReport'));
+  const displayDiv = document.getElementById('report-display');
+  
+  if (reportData) {
+    displayDiv.innerHTML = `
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold">Title</h3>
+          <p class="text-slate-600 dark:text-slate-400">${reportData.title}</p>
+        </div>
+        <div>
+          <h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold">Type of Issue</h3>
+          <p class="text-slate-600 dark:text-slate-400">${reportData.type.charAt(0).toUpperCase() + reportData.type.slice(1)}</p>
+        </div>
+        <div>
+          <h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold">Detailed Description</h3>
+          <p class="text-slate-600 dark:text-slate-400">${reportData.description}</p>
+        </div>
+        <div>
+          <h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold">Submitted On</h3>
+          <p class="text-slate-600 dark:text-slate-400">${new Date(reportData.timestamp).toLocaleString()}</p>
+        </div>
+      </div>
+    `;
+  } else {
+    displayDiv.innerHTML = `
+      <p class="text-slate-600 dark:text-slate-400 text-center">No report data found. Please <a href="2nd.html" class="text-primary hover:underline">submit a report</a> first.</p>
+    `;
+  }
+</script>
 </div>
-</body></html>
+</body>
+</html>

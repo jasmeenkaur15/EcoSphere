@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -138,4 +138,239 @@
 </main>
 </div>
 </div>
-</body></html>
+</body></html> -->
+
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Create Your EcoSphere Account</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2A9D8F",
+            "secondary": "#F8F9FA",
+            "accent": "#264653",
+            "background-light": "#F8F9FA",
+            "background-dark": "#1a1a1a",
+            "text-light": "#1a1a1a",
+            "text-dark": "#F8F9FA",
+            "text-muted-light": "#555",
+            "text-muted-dark": "#aaa",
+            "border-light": "#e0e0e0",
+            "border-dark": "#444"
+          },
+          fontFamily: {
+            "display": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+      <header class="absolute top-0 left-0 right-0 z-10 p-6 sm:px-10 sm:py-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4 text-text-light dark:text-text-dark">
+            <span class="material-symbols-outlined text-primary text-3xl">public</span>
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">EcoSphere</h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="hidden text-sm sm:inline text-text-muted-light dark:text-text-muted-dark">Already have an account?</span>
+            <a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-black/5 dark:hover:bg-white/5 transition-colors" href="#">
+              <span class="truncate">Log In</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="flex min-h-screen w-full">
+        <div class="hidden lg:flex w-1/2 flex-col items-center justify-center bg-accent p-12 text-white relative">
+          <div class="absolute inset-0 bg-cover bg-center opacity-20" data-alt="Lush green forest with sunlight filtering through the trees." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALtUoT87_18EsrCXIj-viCtayZDUkHGZG5fulDWw55-wXZArVeDsgUv93dV7fh2hF0oU3pUJMnwdaS5GHm2FcDwa5SQ5CRMSGyAyCaKP2itqJbhMDHjhwqg64q_ZR7nz6M7um_a1VfKM41jJ_60-MoR0HwN0WxjGd7mY6ePf0NGYwEwljSHoO4FhDm4GCEqr01wO7NNOEb7cZ-wq4r5Mg55pVRu5aT-5gvFTZdLNW0s8f0rfQiNQfXMKW5J69f1ybhpjvxJBlzqMU');"></div>
+          <div class="relative z-10 text-center max-w-md">
+            <h1 class="text-4xl font-black leading-tight tracking-tight mb-4">Join the Movement for a Greener Planet.</h1>
+            <p class="text-lg font-light text-gray-200">Connect, act, and make a tangible difference for our environment. Your journey starts here.</p>
+          </div>
+        </div>
+        <div class="flex w-full lg:w-1/2 items-center justify-center p-6 sm:p-12">
+          <div class="w-full max-w-md space-y-8 pt-16 lg:pt-0" id="signup-form">
+            <div>
+              <h1 class="text-3xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark sm:text-4xl">Create Your EcoSphere Account</h1>
+              <p class="mt-2 text-base text-text-muted-light dark:text-text-muted-dark">Start making a difference today.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-white dark:bg-gray-800 border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                <img alt="Google logo" class="w-5 h-5 mr-3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ3wYzr-Z4pijzp7Y_wayqcjIcLxU2rkea6Z4MzRnD6PQPGCakGB2CSyIJlnrAoiZMkXGzdnYY9tpuCuFJhSMXZLSTR8h8PPVksRUguZf2cNzIZ8RxS_rMHLXH27-Xv2XYop35gmSzPO-2hICo03x8Kyw8DczErlqfNTiBshSV-hDwP-E3qBBQfoMSpYTdpWWmbW2XKN_ZKQjRZZ-JN9au3CYr3I1maVYG90E3OujhbNUVU3jqM8qKICW6rqxJzFm3i3S1maahrag"/>
+                <span class="truncate">Sign up with Google</span>
+              </button>
+            </div>
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-border-light dark:border-border-dark"></div>
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="bg-background-light dark:bg-background-dark px-2 text-text-muted-light dark:text-text-muted-dark">OR</span>
+              </div>
+            </div>
+            <form action="#" class="space-y-6" method="POST" id="signup-form-element">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-base font-medium leading-normal pb-2">Full Name</p>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] text-base font-normal leading-normal transition-shadow" placeholder="Enter your full name" required="" type="text" id="full-name" value=""/>
+              </label>
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-base font-medium leading-normal pb-2">Email Address</p>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-14 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] text-base font-normal leading-normal transition-shadow" placeholder="Enter your email address" required="" type="email" id="email" value=""/>
+              </label>
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-base font-medium leading-normal pb-2">Password</p>
+                <div class="flex w-full flex-1 items-stretch rounded-lg border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary/50 transition-shadow">
+                  <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-14 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] rounded-r-none pr-2 text-base font-normal leading-normal" placeholder="Enter your password" required="" type="password" id="password" value=""/>
+                  <button aria-label="Toggle password visibility" class="text-text-muted-light dark:text-text-muted-dark flex bg-transparent items-center justify-center px-[15px] rounded-r-lg" type="button" id="toggle-password">
+                    <span class="material-symbols-outlined text-xl">visibility</span>
+                  </button>
+                </div>
+              </label>
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-base font-medium leading-normal pb-2">Confirm Password</p>
+                <div class="flex w-full flex-1 items-stretch rounded-lg border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary/50 transition-shadow">
+                  <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-14 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] rounded-r-none pr-2 text-base font-normal leading-normal" placeholder="Confirm your password" required="" type="password" id="confirm-password" value=""/>
+                  <button aria-label="Toggle password visibility" class="text-text-muted-light dark:text-text-muted-dark flex bg-transparent items-center justify-center px-[15px] rounded-r-lg" type="button" id="toggle-confirm-password">
+                    <span class="material-symbols-outlined text-xl">visibility_off</span>
+                  </button>
+                </div>
+                <p class="text-red-500 text-xs mt-2 hidden" id="password-error">Passwords do not match.</p>
+              </label>
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input class="form-checkbox h-4 w-4 rounded border-border-light dark:border-border-dark text-primary focus:ring-primary/50 bg-background-light dark:bg-background-dark" id="terms" name="terms" type="checkbox"/>
+                </div>
+                <div class="ml-3 text-sm">
+                  <label class="text-text-muted-light dark:text-text-muted-dark" for="terms">I agree to the 
+                    <a class="font-medium text-primary hover:underline" href="#">Terms and Conditions</a> and 
+                    <a class="font-medium text-primary hover:underline" href="#">Privacy Policy</a>.
+                  </label>
+                </div>
+              </div>
+              <button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity" type="submit">
+                <span class="truncate">Create Account</span>
+              </button>
+            </form>
+          </div>
+          <!-- Success Message (hidden by default) -->
+          <div class="w-full max-w-md space-y-8 pt-16 lg:pt-0 hidden" id="success-message">
+            <div class="w-full rounded-xl bg-green-100 dark:bg-green-900/90 p-6 shadow-2xl backdrop-blur-sm">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-2xl text-green-600 dark:text-green-400">check_circle</span>
+                <p class="text-lg font-semibold text-green-800 dark:text-green-200">Thanks for creating an account!</p>
+              </div>
+              <p class="text-base text-green-700 dark:text-green-300" id="login-as-text"></p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Toggle password visibility for password field
+    document.getElementById('toggle-password').addEventListener('click', function() {
+      const passwordInput = document.getElementById('password');
+      const icon = this.querySelector('span');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        passwordInput.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    });
+
+    // Toggle password visibility for confirm password field
+    document.getElementById('toggle-confirm-password').addEventListener('click', function() {
+      const confirmPasswordInput = document.getElementById('confirm-password');
+      const icon = this.querySelector('span');
+      if (confirmPasswordInput.type === 'password') {
+        confirmPasswordInput.type = 'text';
+        icon.textContent = 'visibility_off';
+      } else {
+        confirmPasswordInput.type = 'password';
+        icon.textContent = 'visibility';
+      }
+    });
+
+    // Form submission
+    document.getElementById('signup-form-element').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('full-name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const terms = document.getElementById('terms').checked;
+      const errorMsg = document.getElementById('password-error');
+
+      // Validation
+      if (!fullName || !email || !password || !confirmPassword) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      if (password !== confirmPassword) {
+        errorMsg.classList.remove('hidden');
+        return;
+      } else {
+        errorMsg.classList.add('hidden');
+      }
+      if (!terms) {
+        alert('Please agree to the Terms and Conditions.');
+        return;
+      }
+
+      // Simulate saving data to server (using localStorage)
+      const userData = { name: fullName, email: email, loggedIn: true, timestamp: new Date().toISOString() };
+      localStorage.setItem('userSession', JSON.stringify(userData));
+
+      // Hide form and show success message
+      document.getElementById('signup-form').classList.add('hidden');
+      document.getElementById('login-as-text').textContent = `You are logged in as ${fullName}`;
+      document.getElementById('success-message').classList.remove('hidden');
+
+      // Optional: Redirect after a delay
+      setTimeout(() => {
+        // window.location.href = 'dashboard.html'; // Uncomment to redirect
+      }, 3000);
+    });
+
+    // Check if already logged in (on page load)
+    window.addEventListener('load', function() {
+      const session = localStorage.getItem('userSession');
+      if (session) {
+        const user = JSON.parse(session);
+        if (user.loggedIn) {
+          document.getElementById('signup-form').classList.add('hidden');
+          document.getElementById('login-as-text').textContent = `You are logged in as ${user.name}`;
+          document.getElementById('success-message').classList.remove('hidden');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

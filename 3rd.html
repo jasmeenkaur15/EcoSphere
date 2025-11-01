@@ -1,244 +1,193 @@
 <!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoSphere - Interactive Dashboard</title>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EcoSphere - Community Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#17cf17",
-              "background-light": "#f6f8f6",
-              "background-dark": "#112111",
-              "text-light": "#0e1b0e",
-              "text-dark": "#e8f5e9",
-              "surface-light": "#ffffff",
-              "surface-dark": "#1a2e1a",
-              "border-light": "#e7f3e7",
-              "border-dark": "#2a4f2a",
-              "subtle-light": "#4e974e",
-              "subtle-dark": "#a5d6a7",
-              "accent-yellow": "#FFC107",
-              "accent-coral": "#FF7043",
-            },
-            fontFamily: {
-              "display": ["Public Sans", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#17cf17",
+            "background-light": "#f6f8f6",
+            "surface-light": "#ffffff",
+            "border-light": "#d9e7d9",
+            "subtle-light": "#4e974e"
           },
+          fontFamily: { display: ["Public Sans", "sans-serif"] },
         },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
-    </style>
+      },
+    };
+  </script>
+
+  <style>
+    #map {
+      height: 420px;
+      width: 100%;
+      border-radius: 0.75rem;
+    }
+  </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
-<div class="relative flex min-h-screen w-full flex-col">
-<!-- TopNavBar -->
-<header class="sticky top-0 z-50 flex items-center justify-center border-b border-border-light dark:border-border-dark bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-<div class="flex w-full max-w-7xl items-center justify-between whitespace-nowrap px-4 py-3">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-3 text-text-light dark:text-text-dark">
-<div class="text-primary text-3xl">
-<span class="material-symbols-outlined">eco</span>
-</div>
-<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">EcoSphere</h2>
-</div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-primary" href="1st.html">Dashboard</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#"><a href="2nd.html">Report Issue</a></a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Projects</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Blog</a>
-</nav>
-</div>
-<div class="flex items-center justify-end gap-4">
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-light text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="truncate"><a href="login.html">Login</a></span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 hidden sm:block" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBUylCNd_5F0vtJqvnYEGXxn2PVLW0ijcMhcod349Kj_-4rDt06ThR49IhRAhzflBpywZ815zdvyPTvBC97VD2ehAtHYWSX-aSmOERFq46TCJXl_YowBZxFFB8dSeGiK6aPm75noV2MgKgh1PeSOtDDyihbnq9p6qbqr49MeOXIZGRyMyqSq6puYvguyM1tA3t5xV2nPTYT864feDpoM3dmKE-BILQs2aXIt3NUcJDSwU6YbYI4u-Tg4GmtVgF-i6e9yjcs3qtjQdQ");'></div>
-</div>
-</div>
-</header>
-<!-- Main Content -->
-<main class="flex flex-1 justify-center py-5 sm:py-8 lg:py-10">
-<div class="flex w-full max-w-7xl flex-col gap-8 px-4">
-<!-- PageHeading -->
-<div class="flex flex-wrap items-end justify-between gap-4">
-<div class="flex flex-col gap-2">
-<h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark">Community Dashboard</h1>
-<p class="text-subtle-light dark:text-subtle-dark text-base font-normal leading-normal">See reported issues, ongoing projects, discussions, and community updates.</p>
-</div>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-light text-sm font-bold leading-normal tracking-[0.015em]">
-<span class="material-symbols-outlined text-xl">add_alert</span>
-<span class="truncate"><a href="2nd.html">Report an Issue</a></span>
-</button>
-</div>
-<!-- Main Layout Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-<!-- Left Column: Map and Feed -->
-<div class="lg:col-span-2 flex flex-col gap-8">
-<!-- Map -->
-<section class="flex flex-col gap-4">
-<h2 class="text-xl font-bold">Live Issues Map</h2>
-<div class="w-full bg-center bg-no-repeat aspect-[16/7] bg-cover rounded-xl object-cover border border-border-light dark:border-border-dark" data-alt="Interactive map showing geolocated pins for environmental issues" data-location="Cityscape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUQ5uDYrBmnNSCN_0-ufa5APeI-jd3eis0QXz7AkQ6wECDzy2Fp2x72moNSUVG9_kn0akxRo6F_EXDItjM8OeJM2zebGkmR-OaImBUYIFq-rYmTMNRthc7RNsK8i4JO8VeiAb8PxIZtE5SrfHQG1igD2-hWO2PMK2e7v-nV7npNAIWnrP7RHfa7-3bt1ve_Bwlk_0ud3nd0rOzVzgunuEnMRf--nsXxOGmb8DwLQ9lF3_EhoFraVDgAk5Aml3bHB_qAzFODuki8sk");'></div>
-</section>
-<!-- Filters & Search -->
-<section class="flex flex-col gap-4">
-<div class="flex flex-col md:flex-row gap-4">
-<!-- SearchBar -->
-<div class="flex-grow">
-<label class="flex flex-col h-12 w-full">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark focus-within:ring-2 focus-within:ring-primary">
-<div class="text-subtle-light dark:text-subtle-dark flex items-center justify-center pl-4">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-subtle-light dark:placeholder:text-subtle-dark px-4 pl-2 text-base font-normal leading-normal" placeholder="Search for issues, projects, or discussions" value=""/>
-</div>
-</label>
-</div>
-<!-- Chips -->
-<div class="flex items-center gap-2 overflow-x-auto pb-2">
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-4 hover:border-primary transition-colors">
-<p class="text-sm font-medium">Issue Type</p>
-<span class="material-symbols-outlined text-lg">arrow_drop_down</span>
-</button>
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-4 hover:border-primary transition-colors">
-<p class="text-sm font-medium">Status</p>
-<span class="material-symbols-outlined text-lg">arrow_drop_down</span>
-</button>
-<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark px-4 hover:border-primary transition-colors">
-<p class="text-sm font-medium">Date</p>
-<span class="material-symbols-outlined text-lg">arrow_drop_down</span>
-</button>
-</div>
-</div>
-</section>
-<!-- "What's Happening" Feed -->
-<section class="flex flex-col gap-4">
-<h2 class="text-xl font-bold">What's Happening</h2>
-<div class="flex flex-col gap-4">
-<!-- Feed Item Card 1: New Issue -->
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:border-primary/50 transition-all">
-<div class="flex-shrink-0 size-12 bg-accent-coral/20 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-accent-coral text-3xl"><a href="2nd.html">report</a></span>
-</div>
-<div class="flex-grow">
-<p class="text-sm text-subtle-light dark:text-subtle-dark">New Issue Reported · 15m ago</p>
-<h3 class="font-bold text-lg mt-1">Illegal Waste Dumping near Willow Creek</h3>
-<p class="text-sm mt-1">"Spotted a large pile of construction debris dumped in the protected area..."</p>
-<div class="flex items-center gap-6 mt-3 text-sm text-subtle-light dark:text-subtle-dark">
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">thumb_up</span> 12</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">chat_bubble</span> 3</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">location_on</span> Rivertown</div>
-</div>
-</div>
-<button class="self-start sm:self-center shrink-0 flex items-center justify-center size-10 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-primary">arrow_forward</span>
-</button>
-</div>
-<!-- Feed Item Card 2: Project Update -->
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:border-primary/50 transition-all">
-<div class="flex-shrink-0 size-12 bg-primary/20 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-3xl">update</span>
-</div>
-<div class="flex-grow">
-<p class="text-sm text-subtle-light dark:text-subtle-dark">Project Update · 2h ago</p>
-<h3 class="font-bold text-lg mt-1">Update on the 'Green City Park' cleanup initiative</h3>
-<p class="text-sm mt-1">"We've successfully cleared the west section! Huge thanks to all volunteers. Next phase..."</p>
-<div class="flex items-center gap-6 mt-3 text-sm text-subtle-light dark:text-subtle-dark">
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">thumb_up</span> 48</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">chat_bubble</span> 9</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">group</span> 25 Volunteers</div>
-</div>
-</div>
-<button class="self-start sm:self-center shrink-0 flex items-center justify-center size-10 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-primary">arrow_forward</span>
-</button>
-</div>
-<!-- Feed Item Card 3: New Discussion -->
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-4 flex flex-col sm:flex-row gap-4 hover:shadow-lg hover:border-primary/50 transition-all">
-<div class="flex-shrink-0 size-12 bg-accent-yellow/20 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-accent-yellow text-3xl">forum</span>
-</div>
-<div class="flex-grow">
-<p class="text-sm text-subtle-light dark:text-subtle-dark">New Discussion · 1d ago</p>
-<h3 class="font-bold text-lg mt-1">How can we reduce single-use plastic in our town?</h3>
-<p class="text-sm mt-1">"Looking for practical ideas and local businesses that could partner with us..."</p>
-<div class="flex items-center gap-6 mt-3 text-sm text-subtle-light dark:text-subtle-dark">
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">thumb_up</span> 21</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">chat_bubble</span> 15</div>
-<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-base">lightbulb</span> 5 Ideas</div>
-</div>
-</div>
-<button class="self-start sm:self-center shrink-0 flex items-center justify-center size-10 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-primary">arrow_forward</span>
-</button>
-</div>
-</div>
-</section>
-</div>
-<!-- Right Sidebar: Projects and Discussions -->
-<aside class="lg:col-span-1 flex flex-col gap-8">
-<!-- Key Projects -->
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-6">
-<h3 class="text-lg font-bold mb-4">Key Projects</h3>
-<div class="flex flex-col gap-5">
-<!-- Project Card 1 -->
-<div class="flex gap-4">
-<div class="flex-shrink-0 w-16 h-16 bg-cover bg-center rounded-lg" data-alt="Tree planting project" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAC2paIHRLmcntFCyjim3pxXALb1VAAVhEgDGMZuzxvJXpl5ATot-KiMOyRb2o9SKaXs-VvBvJmWrpxHJm2LUJtKzllSKyqM1NvNhxRZ198iaFt_NfTUtDQxpRtZDtspgdpFUHjz-sGuXfy-SSMDogPb6i8YamrfnkZQbcuxrF3UHLWZQTdKEsD1ciRdT6-OuBFm8P9o5CfRMxOnAdLEhcZ2kgsiIDinm-d9vrq4k7sbPoVI3iQl50AYqbg_-y56S63qwkxT8iY8Co')"></div>
-<div>
-<h4 class="font-bold leading-tight">Community Reforestation</h4>
-<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Planting 1,000 native trees.</p>
-<div class="w-full bg-primary/20 rounded-full h-2 mt-2">
-<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-</div>
-<!-- Project Card 2 -->
-<div class="flex gap-4">
-<div class="flex-shrink-0 w-16 h-16 bg-cover bg-center rounded-lg" data-alt="River cleanup project" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDW5mgIIHGc-hHh08ZUJKK6WTZLL0PjAHT9wc8Js9qDLsJYGHsIabvJD8ijdNkc1tq8opxdxmU99SAyPe82J-XRUpiZAmcjXt7kvpwtL_fYFgFH-RSp9o7GkILaZYpH3-_jPUdduP3XF0R64xfMm7i7aaZL5NpIUJL3c0e_yaInOToDLMu2KKmwS1GZg7oGESuzWZVAIKeZo7_10LiJDBLBDdvVpsHWFXExtpMsH8rAn8CstRfv63XTt6inwWL8hYaT05XnM76GABY')"></div>
-<div>
-<h4 class="font-bold leading-tight">River Cleanup Drive</h4>
-<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Removing plastic from the riverbank.</p>
-<div class="w-full bg-primary/20 rounded-full h-2 mt-2">
-<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
-</div>
-</div>
-</div>
-<a class="text-sm font-bold text-primary hover:underline" href="#">View all projects →</a>
-</div>
-</div>
-<!-- Start a Discussion -->
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-6">
-<h3 class="text-lg font-bold">Have an idea?</h3>
-<p class="text-sm text-subtle-light dark:text-subtle-dark mt-1 mb-4">Share your thoughts and collaborate with the community.</p>
-<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-xl">add_comment</span>
-<span class="truncate">Start a Discussion</span>
-</button>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<!-- AI Chatbot Widget -->
-<button class="fixed bottom-6 right-6 flex items-center justify-center size-14 bg-primary rounded-full shadow-lg hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl text-text-light">smart_toy</span>
-</button>
-</div>
-</body></html>
+<body class="font-display bg-background-light text-text-light">
+
+  <div class="max-w-7xl mx-auto p-6">
+    <h1 class="text-3xl font-extrabold mb-4 text-primary">🌿 EcoSphere Community Dashboard</h1>
+
+    <!-- Map Search and Interaction -->
+    <div class="mb-6">
+      <div class="flex gap-3 mb-3">
+        <input type="text" id="location-input" placeholder="Search location..." 
+               class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary" />
+        <button id="search-btn" class="bg-primary text-white px-4 py-2 rounded-lg">Search</button>
+      </div>
+      <div id="map" class="border border-light"></div>
+      <p class="text-sm mt-2 text-subtle-light">Click on the map or search a location to view area blogs/issues.</p>
+    </div>
+
+    <!-- Nearby Blogs -->
+    <div id="nearby-section" class="hidden bg-white border rounded-xl p-4 mt-4 shadow-sm">
+      <h2 class="text-xl font-bold text-primary mb-2">Nearby Blogs & Issues</h2>
+      <ul id="nearby-list" class="space-y-2"></ul>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="bg-white border rounded-xl p-4 mt-6 shadow-sm">
+      <h3 class="text-lg font-bold text-primary mb-3">💬 Community Comments</h3>
+      <div id="comments-container" class="space-y-3 mb-3"></div>
+
+      <div class="flex gap-2">
+        <input type="text" id="comment-input" placeholder="Write a comment..." class="flex-1 border px-3 py-2 rounded-lg" />
+        <button id="add-comment" class="bg-primary text-white px-4 py-2 rounded-lg">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* -----------------------------------
+       🗺️ INTERACTIVE MAP SETUP
+    ----------------------------------- */
+    const map = L.map('map').setView([28.6139, 77.2090], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    let marker;
+    map.on('click', (e) => {
+      const { lat, lng } = e.latlng;
+      if (marker) marker.remove();
+      marker = L.marker([lat, lng]).addTo(map)
+        .bindPopup(`📍 Selected Location<br>Lat: ${lat.toFixed(3)}, Lng: ${lng.toFixed(3)}`)
+        .openPopup();
+      loadNearbyBlogs(lat, lng);
+    });
+
+    document.getElementById('search-btn').addEventListener('click', async () => {
+      const query = document.getElementById('location-input').value.trim();
+      if (!query) return;
+      const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      if (data.length) {
+        const { lat, lon } = data[0];
+        map.setView([lat, lon], 13);
+        if (marker) marker.remove();
+        marker = L.marker([lat, lon]).addTo(map)
+          .bindPopup(`📍 ${query}`).openPopup();
+        loadNearbyBlogs(lat, lon);
+      }
+    });
+
+    /* -----------------------------------
+       📰 LOAD NEARBY BLOGS
+    ----------------------------------- */
+    function loadNearbyBlogs(lat, lng) {
+      const blogs = [
+        { title: "🌱 Tree Plantation Drive", desc: "Join us this weekend near City Park!", dist: "1.2 km" },
+        { title: "🚯 Plastic Waste Cleanup", desc: "Volunteers needed for river cleanup.", dist: "2.5 km" },
+        { title: "🌍 Air Quality Report", desc: "Recent data shows PM2.5 improvement.", dist: "3.1 km" }
+      ];
+
+      const list = document.getElementById("nearby-list");
+      list.innerHTML = blogs.map(b => `
+        <li class="border p-3 rounded-lg hover:bg-primary/10 transition">
+          <h4 class="font-semibold">${b.title}</h4>
+          <p class="text-sm text-gray-600">${b.desc}</p>
+          <p class="text-xs text-gray-500 mt-1">📏 Distance: ${b.dist}</p>
+        </li>
+      `).join("");
+
+      document.getElementById("nearby-section").classList.remove("hidden");
+    }
+
+    /* -----------------------------------
+       💬 INTERACTIVE COMMENT SYSTEM
+    ----------------------------------- */
+    const commentInput = document.getElementById("comment-input");
+    const addCommentBtn = document.getElementById("add-comment");
+    const commentsContainer = document.getElementById("comments-container");
+
+    let comments = JSON.parse(localStorage.getItem("eco_comments_v2")) || [];
+
+    function saveComments() {
+      localStorage.setItem("eco_comments_v2", JSON.stringify(comments));
+    }
+
+    function renderComments() {
+      commentsContainer.innerHTML = comments.map((c, i) => `
+        <div class="border p-3 rounded-lg">
+          <p class="text-sm">${c.text}</p>
+          <div class="flex items-center gap-3 mt-2 text-sm">
+            <button onclick="likeComment(${i})" class="text-primary">❤️ ${c.likes}</button>
+            <button onclick="replyToComment(${i})" class="text-blue-500">💬 Reply</button>
+          </div>
+          ${c.replies.map((r, ri) => `
+            <div class="ml-4 mt-2 p-2 border-l-2 border-primary text-sm">
+              ↳ ${r}
+            </div>
+          `).join("")}
+        </div>
+      `).join("");
+    }
+
+    addCommentBtn.addEventListener("click", () => {
+      const text = commentInput.value.trim();
+      if (!text) return;
+      comments.push({ text, likes: 0, replies: [] });
+      saveComments();
+      commentInput.value = "";
+      renderComments();
+    });
+
+    window.likeComment = (i) => {
+      comments[i].likes++;
+      saveComments();
+      renderComments();
+    };
+
+    window.replyToComment = (i) => {
+      const reply = prompt("Write your reply:");
+      if (reply) {
+        comments[i].replies.push(reply);
+        saveComments();
+        renderComments();
+      }
+    };
+
+    renderComments();
+  </script>
+
+</body>
+</html>
